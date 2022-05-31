@@ -15,7 +15,7 @@ poetry run pytest
 
 ## Overview de La CLI
 Tout est dans le helper :
-`
+```bash
 usage: hymaïa-cli [-h] [-w] [-m] [-c] [-v [VALUES]] [-j [JOIN]]
 
 optional arguments:
@@ -28,6 +28,6 @@ optional arguments:
   -j [JOIN], --join [JOIN]
                         If you want to join us
 
-`
+```
 
 Enjoy! 
