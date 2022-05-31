@@ -2,7 +2,8 @@ import argparse
 import requests
 
 from hymaia_cli.command.hymaia_cli_commands import HymaiaCliCommands
-from hymaia_cli.utils.utils import print_content
+from hymaia_cli.utils.printing import print_content
+from hymaia_cli.utils.custom_argparse import VerboseStore
 
 
 def get_ascii_title():
@@ -19,24 +20,14 @@ def get_ascii_title():
 """
 
 
-class VerboseStore(argparse.Action):
-
-    def __call__(self, parser, namespace, values, option_string=None):
-        if not values:
-            for command in getattr(HymaiaCliCommands(), self.dest).get_commands():
-                print(command.name, sep="\n")
-        else:
-            setattr(namespace, self.dest, values)
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog='hymaïa-cli',
                                      description=print(get_ascii_title()),
                                      allow_abbrev=False,
                                      epilog='Enjoy our CLI! :)')
-    parser.add_argument("-w", "--why", help="understand why Hymaïa exist", action="store_true")
-    parser.add_argument("-m", "--manifest", help="read our manifest to know what drives us", action="store_true")
-    parser.add_argument("-c", "--contact", help="to get in touch", action="store_true")
+    parser.add_argument("-w", "--why", help="Understand why Hymaïa exist", action="store_true")
+    parser.add_argument("-m", "--manifest", help="Read our manifest to know what drives us", action="store_true")
+    parser.add_argument("-c", "--contact", help="To get in touch", action="store_true")
     parser.add_argument("-v", "--values", help="Get Hymaïa values", action=VerboseStore, nargs="?")
     parser.add_argument("-j", "--join", help="If you want to join us", action=VerboseStore, nargs="?")
     parsed_args = parser.parse_args()
