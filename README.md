@@ -30,4 +30,4 @@ optional arguments:
 
 ```
 
-Enjoy! 
+Enjoy our CLI! 
