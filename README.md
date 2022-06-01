@@ -6,8 +6,6 @@ PIP avec leurs premières lettres et un collègue qui enchaine "on va créer pip
 Elle vous permettra d'en savoir un peu plus sur [Hymaïa](https://www.hymaia.com/) !
 
 ## Tests
-Les tests sont assez sommaires pour cette première version et notamment du fait que la CLI n'a pas de fonctionnalité poussée, du moins pour le moment :) 
-
 Pour lancer les tests :
 ```bash
 poetry run pytest

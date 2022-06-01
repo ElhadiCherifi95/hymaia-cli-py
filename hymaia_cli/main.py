@@ -20,7 +20,7 @@ def get_ascii_title():
 """
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(prog='hymaïa-cli',
                                      description=print(get_ascii_title()),
                                      allow_abbrev=False,

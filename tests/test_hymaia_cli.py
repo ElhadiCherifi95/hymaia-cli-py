@@ -7,7 +7,7 @@ class TestCommand(unittest.TestCase):
     def test_get_base_url(self):
         # GIVEN
         # WHEN
-        actual_base_url = Command.get_base_url(config_path="tests/resources/config.properties")
+        actual_base_url = Command.get_base_url(config_path="tests/resources/config.ini")
 
         # THEN
         expected_base_url = "https://test.execute-api.eu-west-3.amazonaws.com/hymaia-cli"

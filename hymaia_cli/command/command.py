@@ -1,3 +1,4 @@
+import os
 import configparser
 
 
@@ -12,7 +13,7 @@ class Command:
         return self.get_base_url(), self.url_parameter
 
     @staticmethod
-    def get_base_url(config_path: str = 'hymaia_cli/resources/config.properties') -> str:
+    def get_base_url(config_path: str = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'resources/config.ini')) -> str:
         config = configparser.ConfigParser()
         config.read(config_path)
         base_url = config['aws.api-gateway']['url']
